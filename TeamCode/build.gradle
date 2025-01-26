@@ -25,4 +25,17 @@ android {
 
 dependencies {
     implementation project(':FtcRobotController')
+    implementation "com.acmerobotics.dashboard:dashboard:0.4.16"
+    implementation 'org.ftclib.ftclib:core:2.0.1'
+    implementation 'androidx.compose.ui:ui-graphics-android:1.7.6'
+
+    //FTC Lib
+    implementation 'org.ftclib.ftclib:vision:2.1.0' // vision
+    implementation 'org.ftclib.ftclib:core:2.1.1' // core
 }
+repositories {
+    maven {
+        url = 'https://maven.brott.dev/'
+    }
+}
+
