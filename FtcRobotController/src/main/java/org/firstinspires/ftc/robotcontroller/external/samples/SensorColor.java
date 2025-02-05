@@ -209,7 +209,6 @@ public class SensorColor extends LinearOpMode {
       }
 
       telemetry.update();
-
       // Change the Robot Controller's background color to match the color detected by the color sensor.
       relativeLayout.post(new Runnable() {
         public void run() {

@@ -17,10 +17,10 @@ public class DriveBase {
     private IMU imu;
 
     public void init(HardwareMap hwMap) {
-        FrontLeftMotor = hwMap.get(DcMotor.class, "leftFront");
-        BackLeftMotor = hwMap.get(DcMotor.class, "leftBack");
-        FrontRightMotor = hwMap.get(DcMotor.class, "rightFront");
-        BackRightMotor = hwMap.get(DcMotor.class, "rightBack");
+        FrontLeftMotor = hwMap.get(DcMotor.class, "frontLeft");
+        BackLeftMotor = hwMap.get(DcMotor.class, "backLeft");
+        FrontRightMotor = hwMap.get(DcMotor.class, "frontRight");
+        BackRightMotor = hwMap.get(DcMotor.class, "backRight");
         FrontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         BackLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
