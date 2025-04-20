@@ -1,20 +1,15 @@
 package org.firstinspires.ftc.teamcode.SubSystems;
 
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.armServo;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.clawServo;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.wristServo;
+
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import org.firstinspires.ftc.teamcode.Constants.Hardware;
 import org.firstinspires.ftc.teamcode.Constants.RobotConstants;
 
 public class Servos {
-
-    public Servo clawServo;
-    public Servo wristServo;
-    public static Servo armServo;
-
-    public void init(HardwareMap hwMap) {
-        clawServo = hwMap.get(Servo.class, "clawServo");
-        wristServo = hwMap.get(Servo.class, "wristServo");
-        armServo = hwMap.get(Servo.class, "armServo");
-    }
 
     public enum ClawGrabState {
         CLOSED,

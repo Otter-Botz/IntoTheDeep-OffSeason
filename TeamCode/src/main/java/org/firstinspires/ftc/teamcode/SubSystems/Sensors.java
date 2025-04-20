@@ -1,6 +1,8 @@
 package org.firstinspires.ftc.teamcode.SubSystems;
 
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.sensorDistance;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.touchSensor;
 
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
@@ -10,20 +12,6 @@ import com.qualcomm.hardware.rev.Rev2mDistanceSensor;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Sensors {
-
-    public DistanceSensor sensorDistance;
-    public TouchSensor touchSensor;
-    public ColorSensor colorSensor;
-
-    public void init(HardwareMap hwMap) {
-
-        sensorDistance = hwMap.get(DistanceSensor.class, "sensor_distance");
-        Rev2mDistanceSensor sensorTimeOfFlight = (Rev2mDistanceSensor) sensorDistance;
-
-        touchSensor = hwMap.get(TouchSensor.class, "sensor_touch");
-
-        colorSensor = hwMap.get(ColorSensor.class, "sensor_color");
-    }
 
     public double getDistanceInch() {
         return sensorDistance.getDistance(DistanceUnit.INCH);

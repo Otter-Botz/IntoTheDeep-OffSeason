@@ -1,5 +1,11 @@
 package org.firstinspires.ftc.teamcode.SubSystems;
 
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.BackLeftMotor;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.BackRightMotor;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.FrontLeftMotor;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.FrontRightMotor;
+import static org.firstinspires.ftc.teamcode.Constants.Hardware.imu;
+
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -9,30 +15,6 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class DriveBase {
-    public DcMotor FrontLeftMotor;
-    public DcMotor BackLeftMotor;
-    public DcMotor FrontRightMotor;
-    public DcMotor BackRightMotor;
-
-    private IMU imu;
-
-    public void init(HardwareMap hwMap) {
-        FrontLeftMotor = hwMap.get(DcMotor.class, "frontLeft");
-        BackLeftMotor = hwMap.get(DcMotor.class, "backLeft");
-        FrontRightMotor = hwMap.get(DcMotor.class, "frontRight");
-        BackRightMotor = hwMap.get(DcMotor.class, "backRight");
-        FrontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        BackLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-
-        imu = hwMap.get(IMU.class, "imu");
-        // Adjust the orientation parameters to match your robot
-        IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
-                RevHubOrientationOnRobot.LogoFacingDirection.UP,
-                RevHubOrientationOnRobot.UsbFacingDirection.LEFT));
-        // Without this, the REV Hub's orientation is assumed to be logo up / USB forward
-        imu.initialize(parameters);
-
-    }
 
     public void resetYaw(){
         imu.resetYaw();
